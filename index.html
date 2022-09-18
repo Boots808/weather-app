@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <header
+      class="is-size-3 has-text-white has-background-info has-text-centered has-text-weight-bold"
+    >
+      <heading>Welcome to the Weather Dashboard!</heading>
+    </header>
+
+    <div class="column">
+      <div>
+        <!-- city name input form -->
+        <div class="has-text-info is-size-6 is-centered">
+          <div>Search for a City</div>
+          <form id="user-form">
+            <input id="text-box" class="input" type="text" placeholder="Text input">
+            <div class="button is-info">Search</button>
+          </form>
+        </div>
+        
+        <!-- recent search -->
+        <div id="recent-searches"></div>
+      </div>
+      <div>
+        <div>
+          <h2 id="city-name">
+            <span id="city"></span> <span id="date"></span>
+            <span id="icon"></span>
+          </h2>
+          <p>Temp: <span id="temp"></span> °F</p>
+          <p>Wind: <span id="wind"></span> mph</p>
+          <p>Humidity: <span id="humidity"></span> %</p>
+          <p>UV Index: <span id="uv-index"></span></p>
+        </div>
+       
+        <!-- 5 day weather -->
+
+        <div class="column">
+          <section
+            id="forecast"
+            class="has-background-info-light has-text-grey has-text-centered has-text-weight-bold is-size-5 is-underlined"
+          >
+            Forecast for the next 5 days:
+          </section>
+          <!--Day 1-->
+          <div class="card">
+            <div class="card-content">
+              <h3 id="day-one"></h3>
+              <p id="day1-icon"></p>
+              <p>Temp: <span id="day1-temp"></span></p>
+              <p>Wind: <span id="day1-wind"></span></p>
+              <p>Humidity: <span id="day1-humid"></span></p>
+            </div>
+          </div>
+          <!--day 2-->
+          <div class="card">
+            <div class="card-content has-background-info has-text-white">
+              <h3 id="day-two"></h3>
+              <p id="day2-icon"></p>
+              <p>Temp: <span id="day2-temp"></span></p>
+              <p>Wind: <span id="day2-wind"></span></p>
+              <p>Humidity: <span id="day2-humid"></span></p>
+            </div>
+          </div>
+          <!--day 3-->
+          <div class="card">
+            <div class="card-content has-background-white has-text-info">
+              <h3 id="day-three"></h3>
+              <p id="day3-icon"></p>
+              <p>Temp: <span id="day3-temp"></span></p>
+              <p>Wind: <span id="day3-wind"></span></p>
+              <p>Humidity: <span id="day3-humid"></span></p>
+            </div>
+          </div>
+          <!--day 4-->
+          <div class="card">
+            <div class="card-content has-background-info has-text-white">
+              <div id="day-four"></div>
+              <p id="day4-icon"></p>
+              <p>Temp: <span id="day4-temp"></span></p>
+              <p>Wind: <span id="day4-wind"></span></p>
+              <p>Humidity: <span id="day4-humid"></span></p>
+            </div>
+          </div>
+          <!--day 5-->
+          <div class="card">
+            <div class="card-content has-background-white has-text-info">
+              <h3 id="day-five"></h3>
+              <p id="day5-icon"></p>
+              <p>Temp: <span id="day5-temp"></span></p>
+              <p>Wind: <span id="day5-wind"></span></p>
+              <p>Humidity: <span id="day5-humid"></span></p>
+            </div>
+          </div>
+        </div>
+        </div>
+    </section>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
