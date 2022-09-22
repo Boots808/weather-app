@@ -8,6 +8,11 @@ var currentTempEl = document.getElementById("temp");
 var currentHumidityEl = document.getElementById("humidity");
 var currentUvEl = document.getElementById("uv");
 
+var lat;
+var lon;
+var cityName;
+var searchButtonEl;
+
 //Day 1 Forecast
 var dayOneEl = getElementById("day-1");
 var dayOneIconEl = document.getElementById("day1-icon");
@@ -51,54 +56,54 @@ var getDate = function () {
     today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
   currentDateEl.textContent = date;
   //Day 1
-  var date1 =
+  var day1 =
     today.getMonth() +
     1 +
     "/" +
     (today.getDate() + 1) +
     "/" +
     today.getFullYear();
-  dayOneEl.textContent = date1;
+  dayOneEl.textContent = day1;
 
   //Day 2
-  var date2 =
+  var day2 =
     today.getMonth() +
     1 +
     "/" +
     (today.getDate() + 2) +
     "/" +
     today.getFullYear();
-  dayTwoEl.textContent = date2;
+  dayTwoEl.textContent = day2;
 
   //Day 3
-  var date3 =
+  var day3 =
     today.getMonth() +
     1 +
     "/" +
     (today.getDate() + 3) +
     "/" +
     today.getFullYear();
-  dayThreeEl.textContent = date3;
+  dayThreeEl.textContent = day3;
 
   //Day 4
-  var date4 =
+  var day4 =
     today.getMonth() +
     1 +
     "/" +
     (today.getDate() + 4) +
     "/" +
     today.getFullYear();
-  dayFourEl.textContent = date4;
+  dayFourEl.textContent = day4;
 
   //Day 5
-  var date5 =
+  var day5 =
     today.getMonth() +
     1 +
     "/" +
     (today.getDate() + 5) +
     "/" +
     today.getFullYear();
-  dayFiveEl.textContent = date5;
+  dayFiveEl.textContent = day5;
 };
 
 //Form Data from inputted city
@@ -115,7 +120,7 @@ var formSubmitHandler = function (event) {
 
 //save recent searches
 var recentSearchHandler = function () {
-  searchButtonEl = document.createElement("search-btn");
+  searchButtonEl = document.createElement("recent-search-btn");
   searchButtonEl.textContent = cityName;
   searchButtonEl.setAttribute("class", "recent-search-btn");
   recentSearchesEl.appendChild(searchButtonEl);
@@ -136,7 +141,7 @@ var getCity = function () {
   var apiUrl =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
     cityName +
-    "&appid=2287631e333e6f4cc8ca617520f4ec85";
+    "&appid=565ccf6c8635e1b5a4ac10cf8c0474bc";
 
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
@@ -156,7 +161,7 @@ var getWeatherData = function () {
     lat +
     "&lon=" +
     lon +
-    "&appid=2287631e333e6f4cc8ca617520f4ec85&units=imperial";
+    "&appid=565ccf6c8635e1b5a4ac10cf8c0474bc&units=imperial";
   fetch(apiUrl).then(function (response) {
     if (response.ok) {
       response.json().then(function (data) {
